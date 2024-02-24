@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "latest": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::latest.latest",
+      "inversedBy": "recipes"
+    },
+    "trending": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::trending.trending",
+      "inversedBy": "recipes"
+    },
+    "URL": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
