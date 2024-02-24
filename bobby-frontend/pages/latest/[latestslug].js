@@ -25,7 +25,7 @@ const latestblog = ({ latest }) => {
             src={Youtube}
             alt='No Image Found'
             className='w-20 h-16'/>
-            <Link href={latest.attributes.URL} className="flex justify-center underline text-xl mt-4"> You can watch the recipe Here</Link>
+            <Link href={latest.attributes.URL} target='_blank' className="flex justify-center underline text-xl mt-4"> You can watch the recipe Here</Link>
            
             </div>
       </div>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { GiPlayButton } from "react-icons/gi";
+import {IoIosArrowDropdownCircle} from 'react-icons/io'
 
 const Trending = () => {
   const [data, setData] = useState([]);
@@ -32,7 +33,7 @@ const Trending = () => {
     <div className="mx-20 my-20">
       <div className="text-4xl p-4 lg:flex hidden justify-center font-bowl">Trending Recipes</div>
 
-      <div className="lg:flex hidden bg-gradient-to-t from-[#FFA2A6] to-white/10 rounded-2xl p-4 items-center h-96 w-auto md:gap-10 gap-6">
+      <div className="lg:flex hidden  bg-[#FFA2A6] rounded-2xl p-4 items-center h-96 w-auto md:gap-10 gap-6">
         {data.slice(currentIndex, currentIndex + 4).map((trendings) => (
           
             <Link href="trending/[trendingslug]" as={`trending/${trendings.attributes.slug}`} key={trendings.id} className="justify-evenly w-84 h-84 ">
@@ -81,6 +82,10 @@ const Trending = () => {
 
           
       ))}
+      <IoIosArrowDropdownCircle 
+      size={40} 
+      className="cursor-pointer text-[#FFE3E3] "
+      onClick={handleNextRecipes}/>
 
           </div>
           
