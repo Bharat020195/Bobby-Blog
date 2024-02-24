@@ -41,7 +41,7 @@ const Trending = () => {
                 <img
                 src={`http://127.0.0.1:1337${trendings.attributes.Image.data.attributes.url}`}
                 alt="No Image Found"
-                className="h-64 w-64 p-4 mb-4 "
+                className="h-64 w-64 p-4 mb-4 rounded-full"
               />
               </div>
 
